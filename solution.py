@@ -26,7 +26,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send MAIL FROM command and print server response.
     mail_From = 'Mail From: <syedkamran@stellar.com>\r\n'
-    clientSocket.send(mail_From.encode())
+    clientSocket.send(mail_From)
     #recv2 = clientSocket.recv(1024).decode()
     #print(recv2)
     #if recv2[:3] != '250':
@@ -35,7 +35,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and print server response.
     rcpt_To= 'RCPT TO:<bob@hamburger.edu>\r\n'
-    clientSocket.send(rcpt_To.encode())
+    clientSocket.send(rcpt_To)
     #recv3 = clientSocket.recv(1024).decode()
     #print(recv3)
     #if recv3[:3] != '250':
@@ -54,7 +54,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send message data.
 
-    clientSocket.send(msg.encode())
+    clientSocket.send(msg)
     
     # Message ends with a single period.
     clientSocket.send(endmsg.encode())
